@@ -13,8 +13,7 @@ namespace MMV.Report
 {
     public partial class MasterDistributorDemo1 : System.Web.UI.Page
     {
-        public L5sAutocomplete P5sActRegion, P5sActArea;
-        public L5sAutocomplete P5sActProvince;
+        public L5sAutocomplete P5sActRegion, P5sActArea, P5sActDistrict, P5sActProvince, P5sActWard;
         protected void Page_Load(object sender, EventArgs e)
         {
             //hàm hiển thị
@@ -30,10 +29,18 @@ namespace MMV.Report
 
             this.P5sActProvince = this.P5sActProvince == null ? new L5sAutocomplete(P5sCmmFns.P5sGetProvince("AREA_CD"), this.P5sTxtProvinceCD.ClientID, 0, true) : this.P5sActProvince;
             this.P5sActProvince.L5sChangeFilteringId(this.P5sTxtAreaCD.ClientID);
+
+            this.P5sActDistrict = this.P5sActDistrict == null ? new L5sAutocomplete(P5sCmmFns.P5sGetDistrict("PROVINCE_CD"), this.P5sTxtDistrictCD.ClientID, 0, true) : this.P5sActDistrict;
+            this.P5sActDistrict.L5sChangeFilteringId(this.P5sTxtProvinceCD.ClientID);
+
+            this.P5sActWard = this.P5sActWard == null ? new L5sAutocomplete(P5sCmmFns.P5sGetCommune("DISTRICT_CD"), this.P5sTxtWardCD.ClientID, 0, true) : this.P5sActWard;
+            this.P5sActWard.L5sChangeFilteringId(this.P5sTxtDistrictCD.ClientID);
         }
         protected void P5sLbtnExport_Click(object sender, EventArgs e)
         {
             String provinceCDs = this.P5sTxtProvinceCD.Text;
+            String districtCDs = this.P5sTxtDistrictCD.Text;
+            String wardCDs = this.P5sTxtWardCD.Text;
             #region Sql
             String sql = String.Format(@"select reg.REGION_CODE
 		                                            ,are.AREA_CODE
@@ -58,8 +65,8 @@ namespace MMV.Report
                                             join M_AREA are on are.AREA_CD = map.AREA_CD
                                             join M_REGION reg on reg.REGION_CD = are.REGION_CD
                                             join [M_DISTRIBUTOR_TYPE] mdt on mdt.DISTRIBUTOR_TYPE_CD = dist.DISTRIBUTOR_TYPE_CD
-                                            WHERE prv.PROVINCE_CD IN ({0})
-                                            ORDER BY AREA_ORDER, PROVINCE_CODE", provinceCDs);
+                                            WHERE prv.PROVINCE_CD IN ({0}) AND dt.DISTRICT_CD IN ({1}) AND cm.COMMUNE_CD IN ({2})
+                                            ORDER BY AREA_ORDER, PROVINCE_CODE", provinceCDs, districtCDs, wardCDs);
             #endregion
             DataTable tb = P5sCmmFns.SqlDatatableTimeout(sql, 36000);
             if (tb == null || tb.Rows.Count == 0)

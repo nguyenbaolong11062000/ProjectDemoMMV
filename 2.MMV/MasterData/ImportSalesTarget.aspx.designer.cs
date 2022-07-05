@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MMV {
-    
-    
-    public partial class ImportSalesTarget {
-        
+namespace MMV
+{
+
+
+    public partial class ImportSalesTarget
+    {
+
         /// <summary>
         /// frmMain control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm frmMain;
-        
+
         /// <summary>
         /// ToolkitScriptManagerMain control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManagerMain;
-        
+
         /// <summary>
         /// P5sUpanelSearch control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel P5sUpanelSearch;
-        
+
         /// <summary>
         /// P5sFilterTxt control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox P5sFilterTxt;
-        
+
         /// <summary>
         /// P5sFilterPanel control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel P5sFilterPanel;
-        
+
         /// <summary>
         /// P5sSearch control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton P5sSearch;
-        
+
         /// <summary>
         /// P5sLbtnExportTemplate control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton P5sLbtnExportTemplate;
-        
+
         /// <summary>
         /// P5sUpanelMain control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel P5sUpanelMain;
-        
+
         /// <summary>
         /// P5sFileUpload control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace MMV {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload P5sFileUpload;
-        
+
         /// <summary>
         /// P5sLbtnSaveFile control.
         /// </summary>

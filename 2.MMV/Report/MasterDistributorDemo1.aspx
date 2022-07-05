@@ -57,6 +57,36 @@
                                         ErrorMessage="Bắt buộc nhập!"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
+                             <tr>
+                                <td style="height: 26px; white-space: nowrap; width: 1%; vertical-align: top">
+                                    <%=MMV.L5sMaster.L5sLangs["District"]%><span style="color: Red; white-space: nowrap;"> * </span>:
+                                </td>
+                                <td style="height: 26px; white-space: nowrap; width: 1%; vertical-align: top">
+                                    <asp:TextBox ID="P5sTxtDistrictCD" runat="server" CssClass="TextBox" Width="300px"></asp:TextBox>
+                                    <%=P5sActDistrict.L5sShowAddAll("P5sTxtDistrict_Add")%>
+                                    <%=P5sActDistrict.L5sShowRemoveAll("P5sTxtDistrict_Remove")%>
+                                    <%--2 hàm có sẵn để dùng--%>
+                                </td>
+                                 <td style="height: 26px; white-space: nowrap; width: 98%; vertical-align: top">
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="P5sTxtDistrictCD"
+                                        ErrorMessage="Bắt buộc nhập!"></asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 26px; white-space: nowrap; width: 1%; vertical-align: top">
+                                    <%=MMV.L5sMaster.L5sLangs["Ward"]%><span style="color: Red; white-space: nowrap;"> * </span>:
+                                </td>
+                                <td style="height: 26px; white-space: nowrap; width: 1%; vertical-align: top">
+                                    <asp:TextBox ID="P5sTxtWardCD" runat="server" CssClass="TextBox" Width="300px"></asp:TextBox>
+                                    <%=P5sActWard.L5sShowAddAll("P5sTxtWard_Add")%>
+                                    <%=P5sActWard.L5sShowRemoveAll("P5sTxtWard_Remove")%>
+                                    <%--2 hàm có sẵn để dùng--%>
+                                </td>
+                                 <td style="height: 26px; white-space: nowrap; width: 98%; vertical-align: top">
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="P5sTxtWardCD"
+                                        ErrorMessage="Bắt buộc nhập!"></asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
                             <tr>
                                 <td style="width: 1%; white-space: nowrap">
                                     &nbsp;

@@ -22,22 +22,16 @@ namespace MMV
         {
             L5sInitial.Load(ViewState);
         }
-
         protected void P5sSearch_Click(object sender, EventArgs e)
         {
     
         }
-
-
         protected void P5sLbtnSaveFile_Click(object sender, EventArgs e)
         {
             string fileName = Path.GetFileName(this.P5sFileUpload.PostedFile.FileName);
             string extension = Path.GetExtension(this.P5sFileUpload.PostedFile.FileName);
             if (P5sFileUpload.HasFile)
             {
-                
-               
-
                 if (!this.P5sValidExtenstion(extension))
                 {
                     L5sMsg.Show("Extension of file is not valid!.");
@@ -64,7 +58,7 @@ namespace MMV
                 {
                     L5sMsg.Show("File is no data.");
                     return;                
-               }
+                }
                 
                 //if (!dt.Columns[0].ColumnName.Equals("Template upload Monthly Target for DSRs"))
                 //{
