@@ -1,0 +1,1221 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54C8F0E6-474B-47AB-A9C4-1C69FA5B2D66}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMV</RootNamespace>
+    <AssemblyName>MMV</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\CrystalDecisions.Web\10.2.3600.0__692fbea5521e1304\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL" />
+    <Reference Include="Google.Apis, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.43.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.43.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.43.0.1863, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.43.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="jExcelNet, Version=2.6.9.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="L5sDmComm, Version=1.118.830.171, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\L5sDmComm.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="P5sDmComm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CPTH\DashboardTH\CSS\dashboard.css" />
+    <Content Include="CPTH\DashboardTH\images\loading.gif" />
+    <Content Include="CPTH\DashboardTH\LoadChartCPTH.js" />
+    <Content Include="CPTH\DashboardTH\LoadChartV2.js" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\Dashboard_Coverage_Buying_StoreVisit.aspx" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\Dashboard_MSS_Distribution.aspx" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\Dashboard_PARinPercentage.aspx" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\DistributorDailySummary.aspx" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\MTDActAndTarget.aspx" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\RunScriptDataSQL.aspx" />
+    <Content Include="CPTH\DashboardTH\NewDashboard\SelloutSummary.aspx" />
+    <Content Include="CPTH\DashboardTH\PrimarySalesPerformanceTH.aspx" />
+    <Content Include="CPTH\DashboardTH\SecondarySalesPerformanceTH.aspx" />
+    <Content Include="CPTH\DashboardTH\YTDPrimarySalesPerformanceTH.aspx" />
+    <Content Include="CPTH\DashboardTH\YTDSalesPerformanceTH.aspx" />
+    <Content Include="CSS\ace-mantis.css" />
+    <Content Include="CSS\ace.min.css" />
+    <Content Include="CSS\bootstrap-3.3.6.min.css" />
+    <Content Include="CSS\StyleCSS.css" />
+    <Content Include="Dashboard\ChartService.asmx" />
+    <Content Include="Dashboard\images\loading.gif" />
+    <Content Include="Dashboard\jquery-3.3.1.min.js" />
+    <Content Include="Dashboard\LoadChart.js" />
+    <Content Include="Dashboard\loader.js" />
+    <Content Include="Dashboard\PrimaryInvoiceSalesPerformance.aspx" />
+    <Content Include="Dashboard\PrimaryInvoiceSalesPerformanceMTD.aspx" />
+    <Content Include="Dashboard\ScriptSQL\dbo.D_YTD_SALES_DATA_PRI.Table_190410.sql" />
+    <Content Include="Dashboard\ScriptSQL\dbo.D_YTD_SALES_DATA_SEC.Table_190410.sql" />
+    <Content Include="Dashboard\ScriptSQL\script_mtd_primary.sql" />
+    <Content Include="Dashboard\ScriptSQL\script_mtd_secondary.sql" />
+    <Content Include="Dashboard\ScriptSQL\scrip_MTD_Primary_Update_190409.sql" />
+    <Content Include="Dashboard\ScriptSQL\scrip_MTD_Secondaty_Sales_Update_190409.sql" />
+    <Content Include="Dashboard\ScriptSQL\scrip_YTD_Sales_data_Pri_190410.sql" />
+    <Content Include="Dashboard\ScriptSQL\scrip_YTD_Sales_data_Sec_190409.sql" />
+    <Content Include="Dashboard\SecondarySalesPerformance.aspx" />
+    <Content Include="Dashboard\YTDSalesPerformance.aspx" />
+    <Content Include="fsmdls\GoogleSheet\CreateAuthGoogle.aspx" />
+    <Content Include="fsmdls\mmcv4\CSS\fscstyles_181103.css" />
+    <Content Include="fsmdls\mmcv4\icon\address.png" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move0.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move10.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move100.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move110.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move120.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move130.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move140.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move150.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move160.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move170.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move180.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move190.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move20.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move200.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move210.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move220.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move230.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move240.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move250.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move260.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move270.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move280.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move290.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move30.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move300.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move310.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move320.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move330.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move340.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move350.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move360.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move40.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move50.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move60.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move70.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move80.gif" />
+    <Content Include="fsmdls\mmcv4\icon\angle\move90.gif" />
+    <Content Include="fsmdls\mmcv4\icon\arrowOption.png" />
+    <Content Include="fsmdls\mmcv4\icon\arrowOptionDown.png" />
+    <Content Include="fsmdls\mmcv4\icon\ATM.png" />
+    <Content Include="fsmdls\mmcv4\icon\Bank.png" />
+    <Content Include="fsmdls\mmcv4\icon\blink1.gif" />
+    <Content Include="fsmdls\mmcv4\icon\blink1.png" />
+    <Content Include="fsmdls\mmcv4\icon\blink2.gif" />
+    <Content Include="fsmdls\mmcv4\icon\BSBF.png" />
+    <Content Include="fsmdls\mmcv4\icon\bullet_blue_collapse.png" />
+    <Content Include="fsmdls\mmcv4\icon\centralPoint.png" />
+    <Content Include="fsmdls\mmcv4\icon\centralPointSelect.png" />
+    <Content Include="fsmdls\mmcv4\icon\CoveredWithoutWS.png" />
+    <Content Include="fsmdls\mmcv4\icon\CoveredWithoutWS_.png" />
+    <Content Include="fsmdls\mmcv4\icon\CoveredWS.png" />
+    <Content Include="fsmdls\mmcv4\icon\CoveredWS_.png" />
+    <Content Include="fsmdls\mmcv4\icon\endico.gif" />
+    <Content Include="fsmdls\mmcv4\icon\endico.png" />
+    <Content Include="fsmdls\mmcv4\icon\Hospital.png" />
+    <Content Include="fsmdls\mmcv4\icon\Icon_Cancel.png" />
+    <Content Include="fsmdls\mmcv4\icon\icon_colgate.png" />
+    <Content Include="fsmdls\mmcv4\icon\Icon_Rotate-left.png" />
+    <Content Include="fsmdls\mmcv4\icon\Icon_Rotate-right.png" />
+    <Content Include="fsmdls\mmcv4\icon\Icon_Zoom-in.png" />
+    <Content Include="fsmdls\mmcv4\icon\ic_marker.png" />
+    <Content Include="fsmdls\mmcv4\icon\ic_marker_red.png" />
+    <Content Include="fsmdls\mmcv4\icon\ic_store_blue.png" />
+    <Content Include="fsmdls\mmcv4\icon\ic_store_red.png" />
+    <Content Include="fsmdls\mmcv4\icon\Infor.png" />
+    <Content Include="fsmdls\mmcv4\icon\Info_Spin.png" />
+    <Content Include="fsmdls\mmcv4\icon\latestico.gif" />
+    <Content Include="fsmdls\mmcv4\icon\latestico.png" />
+    <Content Include="fsmdls\mmcv4\icon\longTude.png" />
+    <Content Include="fsmdls\mmcv4\icon\LongTudeSelect.png" />
+    <Content Include="fsmdls\mmcv4\icon\LongTude_.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_1.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_10.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_2.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_3.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_4.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_5.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_6.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_7.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_8.png" />
+    <Content Include="fsmdls\mmcv4\icon\marker_geo_9.png" />
+    <Content Include="fsmdls\mmcv4\icon\Market.png" />
+    <Content Include="fsmdls\mmcv4\icon\nationalhighway.png" />
+    <Content Include="fsmdls\mmcv4\icon\ND.png" />
+    <Content Include="fsmdls\mmcv4\icon\ND_.png" />
+    <Content Include="fsmdls\mmcv4\icon\Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\Out_of_date_clock_icon.svg_.png" />
+    <Content Include="fsmdls\mmcv4\icon\phone.png" />
+    <Content Include="fsmdls\mmcv4\icon\postoffice.png" />
+    <Content Include="fsmdls\mmcv4\icon\printer.png" />
+    <Content Include="fsmdls\mmcv4\icon\replay.png" />
+    <Content Include="fsmdls\mmcv4\icon\ReplayEnd.png" />
+    <Content Include="fsmdls\mmcv4\icon\saleman.png" />
+    <Content Include="fsmdls\mmcv4\icon\saleman2.png" />
+    <Content Include="fsmdls\mmcv4\icon\SalesAmount_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\SalesAmount_Visit_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\school.png" />
+    <Content Include="fsmdls\mmcv4\icon\SD.png" />
+    <Content Include="fsmdls\mmcv4\icon\SDN.png" />
+    <Content Include="fsmdls\mmcv4\icon\SDN_.png" />
+    <Content Include="fsmdls\mmcv4\icon\SD_.png" />
+    <Content Include="fsmdls\mmcv4\icon\startico.gif" />
+    <Content Include="fsmdls\mmcv4\icon\startico.png" />
+    <Content Include="fsmdls\mmcv4\icon\StateHighway.png" />
+    <Content Include="fsmdls\mmcv4\icon\stopico.png" />
+    <Content Include="fsmdls\mmcv4\icon\store.png" />
+    <Content Include="fsmdls\mmcv4\icon\store_ti.png" />
+    <Content Include="fsmdls\mmcv4\icon\TrackingEnd.png" />
+    <Content Include="fsmdls\mmcv4\icon\TrackingStart.png" />
+    <Content Include="fsmdls\mmcv4\icon\TrackingStartEnd.png" />
+    <Content Include="fsmdls\mmcv4\icon\Tracking_Begin.png" />
+    <Content Include="fsmdls\mmcv4\icon\Tracking_Finish.gif" />
+    <Content Include="fsmdls\mmcv4\icon\Tracking_Finish.png" />
+    <Content Include="fsmdls\mmcv4\icon\Tracking_Stop.gif" />
+    <Content Include="fsmdls\mmcv4\icon\Uncovered.png" />
+    <Content Include="fsmdls\mmcv4\icon\Uncovered_.png" />
+    <Content Include="fsmdls\mmcv4\icon\UnSelect_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\UnSelect_SalesAmount_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\UnSelect_SalesAmount_Visit_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\UnSelect_Visited_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\icon\Visited_Outlet.png" />
+    <Content Include="fsmdls\mmcv4\P5sMapsPH.js" />
+    <Content Include="fsmdls\mmcv4\P5sMapsPHV3.js" />
+    <Content Include="fsmdls\mmcv4\TradeProgramMarkDSR.aspx" />
+    <Content Include="fsmdls\RouteOnMap\icon\icon_colgate.png" />
+    <Content Include="fsmdls\RouteOnMap\icon\ic_store_blue.png" />
+    <Content Include="fsmdls\RouteOnMap\icon\ic_store_red.png" />
+    <Content Include="fsmdls\RouteOnMap\icon\saleman.gif" />
+    <Content Include="fsmdls\RouteOnMap\icon\saleman2.png" />
+    <Content Include="fsmdls\RouteOnMap\P5sMapsLoadCustomer.js" />
+    <Content Include="fsmdls\StockCount\MandatedAssortmentReport.aspx" />
+    <Content Include="fsmdls\TransferPage\TransferPage.aspx" />
+    <Content Include="InterfaceTH\AutoUploadDailyCustomer.aspx" />
+    <Content Include="libs\AjaxControlToolkit.dll" />
+    <Content Include="libs\itextsharp.dll" />
+    <Content Include="libs\jExcelNet.dll" />
+    <Content Include="libs\jquery-ui.min.js" />
+    <Content Include="libs\jquery.min.js" />
+    <Content Include="libs\L5sDmComm.dll" />
+    <Content Include="libs\style_autocomplete.css" />
+    <Content Include="libs\token-input-facebook.css" />
+    <Content Include="libs\token-input.css" />
+    <Content Include="libs\P5sScript.js" />
+    <Content Include="MapGeocodeToHierarchy.aspx" />
+    <Content Include="map\1-18-2014 11-51-32 AM.png" />
+    <Content Include="map\1-18-2014 12-04-15 PM.png" />
+    <Content Include="map\1-21-2014 3-30-02 PM.png" />
+    <Content Include="map\1-21-2014 3-34-55 PM.png" />
+    <Content Include="map\1-21-2014 9-49-55 AM.png" />
+    <Content Include="map\ATM.png" />
+    <Content Include="map\Post-Office.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="5SLanguages.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\Dashboard_Coverage_Buying_StoreVisit.aspx.cs">
+      <DependentUpon>Dashboard_Coverage_Buying_StoreVisit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\Dashboard_Coverage_Buying_StoreVisit.aspx.designer.cs">
+      <DependentUpon>Dashboard_Coverage_Buying_StoreVisit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\Dashboard_MSS_Distribution.aspx.cs">
+      <DependentUpon>Dashboard_MSS_Distribution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\Dashboard_MSS_Distribution.aspx.designer.cs">
+      <DependentUpon>Dashboard_MSS_Distribution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\Dashboard_PARinPercentage.aspx.cs">
+      <DependentUpon>Dashboard_PARinPercentage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\Dashboard_PARinPercentage.aspx.designer.cs">
+      <DependentUpon>Dashboard_PARinPercentage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\DistributorDailySummary.aspx.cs">
+      <DependentUpon>DistributorDailySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\DistributorDailySummary.aspx.designer.cs">
+      <DependentUpon>DistributorDailySummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\MTDActAndTarget.aspx.cs">
+      <DependentUpon>MTDActAndTarget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\MTDActAndTarget.aspx.designer.cs">
+      <DependentUpon>MTDActAndTarget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\RunScriptDataSQL.aspx.cs">
+      <DependentUpon>RunScriptDataSQL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\RunScriptDataSQL.aspx.designer.cs">
+      <DependentUpon>RunScriptDataSQL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\SelloutSummary.aspx.cs">
+      <DependentUpon>SelloutSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\NewDashboard\SelloutSummary.aspx.designer.cs">
+      <DependentUpon>SelloutSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\PrimarySalesPerformanceTH.aspx.cs">
+      <DependentUpon>PrimarySalesPerformanceTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\PrimarySalesPerformanceTH.aspx.designer.cs">
+      <DependentUpon>PrimarySalesPerformanceTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\SecondarySalesPerformanceTH.aspx.cs">
+      <DependentUpon>SecondarySalesPerformanceTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\SecondarySalesPerformanceTH.aspx.designer.cs">
+      <DependentUpon>SecondarySalesPerformanceTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\YTDPrimarySalesPerformanceTH.aspx.cs">
+      <DependentUpon>YTDPrimarySalesPerformanceTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\YTDPrimarySalesPerformanceTH.aspx.designer.cs">
+      <DependentUpon>YTDPrimarySalesPerformanceTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\YTDSalesPerformanceTH.aspx.cs">
+      <DependentUpon>YTDSalesPerformanceTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPTH\DashboardTH\YTDSalesPerformanceTH.aspx.designer.cs">
+      <DependentUpon>YTDSalesPerformanceTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\ChartService.asmx.cs">
+      <DependentUpon>ChartService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dashboard\GetDataChart.cs" />
+    <Compile Include="Dashboard\PrimaryInvoiceSalesPerformance.aspx.cs">
+      <DependentUpon>PrimaryInvoiceSalesPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\PrimaryInvoiceSalesPerformance.aspx.designer.cs">
+      <DependentUpon>PrimaryInvoiceSalesPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\PrimaryInvoiceSalesPerformanceMTD.aspx.cs">
+      <DependentUpon>PrimaryInvoiceSalesPerformanceMTD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\PrimaryInvoiceSalesPerformanceMTD.aspx.designer.cs">
+      <DependentUpon>PrimaryInvoiceSalesPerformanceMTD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\SecondarySalesPerformance.aspx.cs">
+      <DependentUpon>SecondarySalesPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\SecondarySalesPerformance.aspx.designer.cs">
+      <DependentUpon>SecondarySalesPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\YTDSalesPerformance.aspx.cs">
+      <DependentUpon>YTDSalesPerformance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\YTDSalesPerformance.aspx.designer.cs">
+      <DependentUpon>YTDSalesPerformance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fsmdls\GoogleSheet\CreateAuthGoogle.aspx.cs">
+      <DependentUpon>CreateAuthGoogle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fsmdls\GoogleSheet\CreateAuthGoogle.aspx.designer.cs">
+      <DependentUpon>CreateAuthGoogle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fsmdls\GoogleSheet\GoogleDriveAPI.cs" />
+    <Compile Include="fsmdls\mmcv4\TradeProgramMarkDSR.aspx.cs">
+      <DependentUpon>TradeProgramMarkDSR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fsmdls\mmcv4\TradeProgramMarkDSR.aspx.designer.cs">
+      <DependentUpon>TradeProgramMarkDSR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fsmdls\StockCount\MandatedAssortmentReport.aspx.cs">
+      <DependentUpon>MandatedAssortmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fsmdls\StockCount\MandatedAssortmentReport.aspx.designer.cs">
+      <DependentUpon>MandatedAssortmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fsmdls\TransferPage\TransferPage.aspx.cs">
+      <DependentUpon>TransferPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fsmdls\TransferPage\TransferPage.aspx.designer.cs">
+      <DependentUpon>TransferPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceTH\AutoUploadDailyCustomer.aspx.cs">
+      <DependentUpon>AutoUploadDailyCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterfaceTH\AutoUploadDailyCustomer.aspx.designer.cs">
+      <DependentUpon>AutoUploadDailyCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapGeocodeToHierarchy.aspx.cs">
+      <DependentUpon>MapGeocodeToHierarchy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapGeocodeToHierarchy.aspx.designer.cs">
+      <DependentUpon>MapGeocodeToHierarchy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\Distributor.aspx.cs">
+      <DependentUpon>Distributor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\Distributor.aspx.designer.cs">
+      <DependentUpon>Distributor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\DistributorDemo1.aspx.cs">
+      <DependentUpon>DistributorDemo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\DistributorDemo1.aspx.designer.cs">
+      <DependentUpon>DistributorDemo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\ImportSalesTarget.aspx.cs">
+      <DependentUpon>ImportSalesTarget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\ImportSalesTarget.aspx.designer.cs">
+      <DependentUpon>ImportSalesTarget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P5sCmm\P5sAutocompleteListBox.cs" />
+    <Compile Include="P5s2.Master.cs">
+      <DependentUpon>P5s2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P5s2.Master.designer.cs">
+      <DependentUpon>P5s2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MAPPING_HIERARCHY.aspx.cs">
+      <DependentUpon>MAPPING_HIERARCHY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAPPING_HIERARCHY.aspx.designer.cs">
+      <DependentUpon>MAPPING_HIERARCHY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="P5s.Master.cs">
+      <DependentUpon>P5s.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="P5s.Master.designer.cs">
+      <DependentUpon>P5s.Master</DependentUpon>
+    </Compile>
+    <Compile Include="P5sCmm\P5sCmmFns.cs" />
+    <Compile Include="P5sCmm\P5sEnum.cs" />
+    <Compile Include="P5sCmm\P5sTrackingHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\MasterDistributor.aspx.cs">
+      <DependentUpon>MasterDistributor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\MasterDistributor.aspx.designer.cs">
+      <DependentUpon>MasterDistributor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\MasterDistributorDemo1.aspx.cs">
+      <DependentUpon>MasterDistributorDemo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\MasterDistributorDemo1.aspx.designer.cs">
+      <DependentUpon>MasterDistributorDemo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\CreateConsolidatedTable.aspx.cs">
+      <DependentUpon>CreateConsolidatedTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tool\CreateConsolidatedTable.aspx.designer.cs">
+      <DependentUpon>CreateConsolidatedTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\CustomersMonthlyVisitReportAll.aspx.cs">
+      <DependentUpon>CustomersMonthlyVisitReportAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tool\CustomersMonthlyVisitReportAll.aspx.designer.cs">
+      <DependentUpon>CustomersMonthlyVisitReportAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\InactiveCodeNotExistInFileMaster.aspx.cs">
+      <DependentUpon>InactiveCodeNotExistInFileMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tool\InactiveCodeNotExistInFileMaster.aspx.designer.cs">
+      <DependentUpon>InactiveCodeNotExistInFileMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\UpdateCustomer.aspx.cs">
+      <DependentUpon>UpdateCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tool\UpdateCustomer.aspx.designer.cs">
+      <DependentUpon>UpdateCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\UploadFile.cs" />
+    <Compile Include="Webservices\Synchronize.asmx.cs">
+      <DependentUpon>Synchronize.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\SynchronizeV2.asmx.cs">
+      <DependentUpon>SynchronizeV2.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Webservices\SynchronizeV2_POC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\SynchronizeV3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon\saleman2.png" />
+    <Content Include="libs\KeyGoogleMap.js" />
+    <Content Include="libs\markerwithlabel.js" />
+    <Content Include="MasterData\Distributor.aspx" />
+    <Content Include="MasterData\DistributorDemo1.aspx" />
+    <Content Include="MasterData\ImportSalesTarget.aspx" />
+    <Content Include="P5sMapsPH.js" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\net45\Google.Apis.dll" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\net45\Google.Apis.pdb" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\net45\Google.Apis.PlatformServices.dll" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\net45\Google.Apis.xml" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\netstandard1.3\Google.Apis.dll" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\netstandard1.3\Google.Apis.pdb" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\netstandard1.3\Google.Apis.xml" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\netstandard2.0\Google.Apis.dll" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\netstandard2.0\Google.Apis.pdb" />
+    <Content Include="packages\Google.Apis.1.43.0\lib\netstandard2.0\Google.Apis.xml" />
+    <Content Include="packages\Google.Apis.1.43.0\NuGetIcon.png" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.dll" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.pdb" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.PlatformServices.dll" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.xml" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard1.3\Google.Apis.Auth.dll" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard1.3\Google.Apis.Auth.pdb" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard1.3\Google.Apis.Auth.PlatformServices.dll" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard1.3\Google.Apis.Auth.xml" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard2.0\Google.Apis.Auth.dll" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard2.0\Google.Apis.Auth.pdb" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard2.0\Google.Apis.Auth.PlatformServices.dll" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\lib\netstandard2.0\Google.Apis.Auth.xml" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\NuGetIcon.png" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\net45\Google.Apis.Core.dll" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\net45\Google.Apis.Core.pdb" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\net45\Google.Apis.Core.xml" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\netstandard1.3\Google.Apis.Core.dll" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\netstandard1.3\Google.Apis.Core.pdb" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\netstandard1.3\Google.Apis.Core.xml" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\netstandard2.0\Google.Apis.Core.dll" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\netstandard2.0\Google.Apis.Core.pdb" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\lib\netstandard2.0\Google.Apis.Core.xml" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\NuGetIcon.png" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net40\Google.Apis.Drive.v3.dll" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net40\Google.Apis.Drive.v3.pdb" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net40\Google.Apis.Drive.v3.xml" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net45\Google.Apis.Drive.v3.dll" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net45\Google.Apis.Drive.v3.pdb" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\net45\Google.Apis.Drive.v3.xml" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard1.0\Google.Apis.Drive.v3.dll" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard1.0\Google.Apis.Drive.v3.pdb" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard1.0\Google.Apis.Drive.v3.xml" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard1.3\Google.Apis.Drive.v3.dll" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard1.3\Google.Apis.Drive.v3.pdb" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard1.3\Google.Apis.Drive.v3.xml" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard2.0\Google.Apis.Drive.v3.dll" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard2.0\Google.Apis.Drive.v3.pdb" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\lib\netstandard2.0\Google.Apis.Drive.v3.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\packageIcon.png" />
+    <Content Include="Report\images\alert.gif" />
+    <Content Include="Report\images\arrow.gif" />
+    <Content Include="Report\images\b-1a.gif" />
+    <Content Include="Report\images\b-1b.gif" />
+    <Content Include="Report\images\b-1c.gif" />
+    <Content Include="Report\images\b-2a.gif" />
+    <Content Include="Report\images\b-2c.gif" />
+    <Content Include="Report\images\b-3a.gif" />
+    <Content Include="Report\images\b-3b.gif" />
+    <Content Include="Report\images\b-3c.gif" />
+    <Content Include="Report\images\back-lm5.gif" />
+    <Content Include="Report\images\banner-app-dis.gif" />
+    <Content Include="Report\images\banner-app-dis1.gif" />
+    <Content Include="Report\images\banner-app-dis3.gif" />
+    <Content Include="Report\images\banner-app-dis4.gif" />
+    <Content Include="Report\images\banner-app-dis5.gif" />
+    <Content Include="Report\images\banner_bg.gif" />
+    <Content Include="Report\images\banner_bg2.gif" />
+    <Content Include="Report\images\bgimg.jpg" />
+    <Content Include="Report\images\bgimg1.jpg" />
+    <Content Include="Report\images\blue1.gif" />
+    <Content Include="Report\images\blue2.gif" />
+    <Content Include="Report\images\blue3.gif" />
+    <Content Include="Report\images\blueback.gif" />
+    <Content Include="Report\images\btab1.gif" />
+    <Content Include="Report\images\btab2.gif" />
+    <Content Include="Report\images\btab3.gif" />
+    <Content Include="Report\images\b_chgpw.gif" />
+    <Content Include="Report\images\b_chgpw2.gif" />
+    <Content Include="Report\images\b_edit.png" />
+    <Content Include="Report\images\b_logout.gif" />
+    <Content Include="Report\images\b_logout2.gif" />
+    <Content Include="Report\images\b_next.gif" />
+    <Content Include="Report\images\b_next2.gif" />
+    <Content Include="Report\images\b_pre.gif" />
+    <Content Include="Report\images\b_pre2.gif" />
+    <Content Include="Report\images\c-1a.gif" />
+    <Content Include="Report\images\c-1b.gif" />
+    <Content Include="Report\images\c-1c.gif" />
+    <Content Include="Report\images\c-2a.gif" />
+    <Content Include="Report\images\c-2c.gif" />
+    <Content Include="Report\images\c-3a.gif" />
+    <Content Include="Report\images\c-3b.gif" />
+    <Content Include="Report\images\c-3c.gif" />
+    <Content Include="Report\images\cal.gif" />
+    <Content Include="Report\images\cancel.png" />
+    <Content Include="Report\images\check.png" />
+    <Content Include="Report\images\clock.gif" />
+    <Content Include="Report\images\close_a.gif" />
+    <Content Include="Report\images\close_d.gif" />
+    <Content Include="Report\images\close_o.gif" />
+    <Content Include="Report\images\Copy of b_chgpw.gif" />
+    <Content Include="Report\images\Copy of b_chgpw2.gif" />
+    <Content Include="Report\images\Copy of b_logout.gif" />
+    <Content Include="Report\images\Copy of b_logout2.gif" />
+    <Content Include="Report\images\copyright.gif" />
+    <Content Include="Report\images\custlogo_lnf.jpg" />
+    <Content Include="Report\images\custlogo_lnf2.jpg" />
+    <Content Include="Report\images\custlogo_lnf3.jpg" />
+    <Content Include="Report\images\deal.png" />
+    <Content Include="Report\images\delete.jpg" />
+    <Content Include="Report\images\delete.png" />
+    <Content Include="Report\images\DeleteRed.png" />
+    <Content Include="Report\images\deselectall-icon.gif" />
+    <Content Include="Report\images\down.gif" />
+    <Content Include="Report\images\dtranfer.png" />
+    <Content Include="Report\images\dtranfer2.png" />
+    <Content Include="Report\images\edit.png" />
+    <Content Include="Report\images\enter_licence_logo.gif" />
+    <Content Include="Report\images\eye.gif" />
+    <Content Include="Report\images\forward-lm2.gif" />
+    <Content Include="Report\images\frmcorner_1.png" />
+    <Content Include="Report\images\frmcorner_2.png" />
+    <Content Include="Report\images\frmcorner_3.png" />
+    <Content Include="Report\images\frmcorner_4.png" />
+    <Content Include="Report\images\frmln_bottom.png" />
+    <Content Include="Report\images\frmln_left.png" />
+    <Content Include="Report\images\frmln_right.png" />
+    <Content Include="Report\images\frmln_top.png" />
+    <Content Include="Report\images\gray1.gif" />
+    <Content Include="Report\images\gray2.gif" />
+    <Content Include="Report\images\gray3.gif" />
+    <Content Include="Report\images\green1.gif" />
+    <Content Include="Report\images\green2.gif" />
+    <Content Include="Report\images\green3.gif" />
+    <Content Include="Report\images\i-1.gif" />
+    <Content Include="Report\images\i-3.gif" />
+    <Content Include="Report\images\invalid_licence.gif" />
+    <Content Include="Report\images\lefttab.gif" />
+    <Content Include="Report\images\lightgrey.gif" />
+    <Content Include="Report\images\loading1.gif" />
+    <Content Include="Report\images\middlebg.jpg" />
+    <Content Include="Report\images\middlebg1.jpg" />
+    <Content Include="Report\images\middlebg3.jpg" />
+    <Content Include="Report\images\middletab.gif" />
+    <Content Include="Report\images\middletab2.gif" />
+    <Content Include="Report\images\middletab2.jpg" />
+    <Content Include="Report\images\next.gif" />
+    <Content Include="Report\images\none.gif" />
+    <Content Include="Report\images\pdf.png" />
+    <Content Include="Report\images\prev.gif" />
+    <Content Include="Report\images\read.gif" />
+    <Content Include="Report\images\read1.gif" />
+    <Content Include="Report\images\read2.gif" />
+    <Content Include="Report\images\register.gif" />
+    <Content Include="Report\images\righttab.gif" />
+    <Content Include="Report\images\sd.png" />
+    <Content Include="Report\images\selectall-icon.gif" />
+    <Content Include="Report\images\spacer.gif" />
+    <Content Include="Report\images\spacer2.gif" />
+    <Content Include="Report\images\star.gif" />
+    <Content Include="Report\images\tab.gif" />
+    <Content Include="Report\images\tab1.gif" />
+    <Content Include="Report\images\tab1b.gif" />
+    <Content Include="Report\images\tab2.gif" />
+    <Content Include="Report\images\tab2b.gif" />
+    <Content Include="Report\images\tab2_new.gif" />
+    <Content Include="Report\images\tab3.gif" />
+    <Content Include="Report\images\tab3b.gif" />
+    <Content Include="Report\images\tick2.gif" />
+    <Content Include="Report\images\trans.gif" />
+    <Content Include="Report\images\unchecked.gif" />
+    <Content Include="Report\images\unread.gif" />
+    <Content Include="Report\images\unread2.gif" />
+    <Content Include="Report\images\up.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="icon\endico.gif" />
+    <Content Include="icon\latestico.gif" />
+    <Content Include="icon\replay.png" />
+    <Content Include="icon\ReplayEnd.png" />
+    <Content Include="icon\saleman.png" />
+    <Content Include="icon\startico.gif" />
+    <Content Include="libs\Ionic.Zip.dll" />
+    <Content Include="libs\jquery-ui.js" />
+    <Content Include="libs\jquery.anythingzoomer.js" />
+    <Content Include="libs\Newtonsoft.Json.dll" />
+    <Content Include="libs\PgwSlideshow\PgwSlideshow.js" />
+    <Content Include="libs\jquery-ui.css" />
+    <Content Include="libs\jquery.ad-gallery.css" />
+    <Content Include="libs\jquery.ad-gallery.js" />
+    <Content Include="libs\jquery.tokeninput.js" />
+    <Content Include="libs\KeyVietBanDoApi.js" />
+    <Content Include="libs\P5sDmComm.dll" />
+    <Content Include="libs\PgwSlideshow\PgwSlideshow.css" />
+    <Content Include="libs\styles.css" />
+    <Content Include="libs\Zoomimage\jquery.ez-plus.js" />
+    <Content Include="libs\bootstrap\bootstrap-toggle.css" />
+    <Content Include="libs\bootstrap\bootstrap-toggle.js" />
+    <Content Include="libs\bootstrap\bootstrap-toggle.min.css" />
+    <Content Include="libs\bootstrap\bootstrap-toggle.min.js" />
+    <Content Include="libs\bootstrap\bootstrap.min.css" />
+    <Content Include="libs\bootstrap\bootstrap.min.js" />
+    <Content Include="libs\bootstrap\jasny-bootstrap.min.css" />
+    <Content Include="libs\bootstrap\jasny-bootstrap.min.js" />
+    <Content Include="libs\bootstrap\jquery-1.10.2.min.js" />
+    <Content Include="libs\bootstrap\navmenu-reveal.css" />
+    <Content Include="libs\EPPlus.dll" />
+    <Content Include="libs\jquery-autocomplete-listbox.js" />
+    <Content Include="icon\address.png" />
+    <Content Include="icon\angle\move0.gif" />
+    <Content Include="icon\angle\move10.gif" />
+    <Content Include="icon\angle\move100.gif" />
+    <Content Include="icon\angle\move110.gif" />
+    <Content Include="icon\angle\move120.gif" />
+    <Content Include="icon\angle\move130.gif" />
+    <Content Include="icon\angle\move140.gif" />
+    <Content Include="icon\angle\move150.gif" />
+    <Content Include="icon\angle\move160.gif" />
+    <Content Include="icon\angle\move170.gif" />
+    <Content Include="icon\angle\move180.gif" />
+    <Content Include="icon\angle\move190.gif" />
+    <Content Include="icon\angle\move20.gif" />
+    <Content Include="icon\angle\move200.gif" />
+    <Content Include="icon\angle\move210.gif" />
+    <Content Include="icon\angle\move220.gif" />
+    <Content Include="icon\angle\move230.gif" />
+    <Content Include="icon\angle\move240.gif" />
+    <Content Include="icon\angle\move250.gif" />
+    <Content Include="icon\angle\move260.gif" />
+    <Content Include="icon\angle\move270.gif" />
+    <Content Include="icon\angle\move280.gif" />
+    <Content Include="icon\angle\move290.gif" />
+    <Content Include="icon\angle\move30.gif" />
+    <Content Include="icon\angle\move300.gif" />
+    <Content Include="icon\angle\move310.gif" />
+    <Content Include="icon\angle\move320.gif" />
+    <Content Include="icon\angle\move330.gif" />
+    <Content Include="icon\angle\move340.gif" />
+    <Content Include="icon\angle\move350.gif" />
+    <Content Include="icon\angle\move360.gif" />
+    <Content Include="icon\angle\move40.gif" />
+    <Content Include="icon\angle\move50.gif" />
+    <Content Include="icon\angle\move60.gif" />
+    <Content Include="icon\angle\move70.gif" />
+    <Content Include="icon\angle\move80.gif" />
+    <Content Include="icon\angle\move90.gif" />
+    <Content Include="icon\arrowOption.png" />
+    <Content Include="icon\arrowOptionDown.png" />
+    <Content Include="icon\ATM.png" />
+    <Content Include="icon\Bank.png" />
+    <Content Include="icon\blink1.gif" />
+    <Content Include="icon\blink1.png" />
+    <Content Include="icon\blink2.gif" />
+    <Content Include="icon\BSBF.png" />
+    <Content Include="icon\bullet_blue_collapse.png" />
+    <Content Include="icon\centralPoint.png" />
+    <Content Include="icon\centralPointSelect.png" />
+    <Content Include="icon\CoveredWithoutWS.png" />
+    <Content Include="icon\CoveredWithoutWS_.png" />
+    <Content Include="icon\CoveredWS.png" />
+    <Content Include="icon\CoveredWS_.png" />
+    <Content Include="icon\endico.png" />
+    <Content Include="icon\Hospital.png" />
+    <Content Include="icon\Icon_Cancel.png" />
+    <Content Include="icon\Icon_Rotate-left.png" />
+    <Content Include="icon\Icon_Rotate-right.png" />
+    <Content Include="icon\Icon_Zoom-in.png" />
+    <Content Include="icon\latestico.png" />
+    <Content Include="icon\longTude.png" />
+    <Content Include="icon\LongTudeSelect.png" />
+    <Content Include="icon\LongTude_.png" />
+    <Content Include="icon\marker_geo_1.png" />
+    <Content Include="icon\marker_geo_10.png" />
+    <Content Include="icon\marker_geo_2.png" />
+    <Content Include="icon\marker_geo_3.png" />
+    <Content Include="icon\marker_geo_4.png" />
+    <Content Include="icon\marker_geo_5.png" />
+    <Content Include="icon\marker_geo_6.png" />
+    <Content Include="icon\marker_geo_7.png" />
+    <Content Include="icon\marker_geo_8.png" />
+    <Content Include="icon\marker_geo_9.png" />
+    <Content Include="icon\Market.png" />
+    <Content Include="icon\nationalhighway.png" />
+    <Content Include="icon\ND.png" />
+    <Content Include="icon\ND_.png" />
+    <Content Include="icon\Outlet.png" />
+    <Content Include="icon\Out_of_date_clock_icon.svg_.png" />
+    <Content Include="icon\phone.png" />
+    <Content Include="icon\postoffice.png" />
+    <Content Include="icon\printer.png" />
+    <Content Include="icon\SalesAmount_Outlet.png" />
+    <Content Include="icon\SalesAmount_Visit_Outlet.png" />
+    <Content Include="icon\school.png" />
+    <Content Include="icon\SD.png" />
+    <Content Include="icon\SDN.png" />
+    <Content Include="icon\SDN_.png" />
+    <Content Include="icon\SD_.png" />
+    <Content Include="icon\startico.png" />
+    <Content Include="icon\StateHighway.png" />
+    <Content Include="icon\stopico.png" />
+    <Content Include="icon\TrackingEnd.png" />
+    <Content Include="icon\TrackingStart.png" />
+    <Content Include="icon\TrackingStartEnd.png" />
+    <Content Include="icon\Tracking_Begin.png" />
+    <Content Include="icon\Tracking_Finish.gif" />
+    <Content Include="icon\Tracking_Finish.png" />
+    <Content Include="icon\Tracking_Stop.gif" />
+    <Content Include="icon\Uncovered.png" />
+    <Content Include="icon\Uncovered_.png" />
+    <Content Include="icon\UnSelect_Outlet.png" />
+    <Content Include="icon\UnSelect_SalesAmount_Outlet.png" />
+    <Content Include="icon\UnSelect_SalesAmount_Visit_Outlet.png" />
+    <Content Include="icon\UnSelect_Visited_Outlet.png" />
+    <Content Include="icon\Visited_Outlet.png" />
+    <Content Include="images\BackgroudNavigation.png" />
+    <Content Include="images\navigation_mmv.png" />
+    <Content Include="images\navigation_tracking.png" />
+    <Content Include="libs\anythingzoomer.css" />
+    <Content Include="images\alert.gif" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\b-1a.gif" />
+    <Content Include="images\b-1b.gif" />
+    <Content Include="images\b-1c.gif" />
+    <Content Include="images\b-2a.gif" />
+    <Content Include="images\b-2c.gif" />
+    <Content Include="images\b-3a.gif" />
+    <Content Include="images\b-3b.gif" />
+    <Content Include="images\b-3c.gif" />
+    <Content Include="images\back-lm5.gif" />
+    <Content Include="images\back.png" />
+    <Content Include="images\banner_bg.gif" />
+    <Content Include="images\banner_bg2.gif" />
+    <Content Include="images\blue1.gif" />
+    <Content Include="images\blue2.gif" />
+    <Content Include="images\blue3.gif" />
+    <Content Include="images\blueback.gif" />
+    <Content Include="images\btab1.gif" />
+    <Content Include="images\btab2.gif" />
+    <Content Include="images\btab3.gif" />
+    <Content Include="images\b_chgpw.gif" />
+    <Content Include="images\b_chgpw2.gif" />
+    <Content Include="images\b_edit.png" />
+    <Content Include="images\b_logout.gif" />
+    <Content Include="images\b_logout2.gif" />
+    <Content Include="images\b_next.gif" />
+    <Content Include="images\b_next2.gif" />
+    <Content Include="images\b_pre.gif" />
+    <Content Include="images\b_pre2.gif" />
+    <Content Include="images\c-1a.gif" />
+    <Content Include="images\c-1b.gif" />
+    <Content Include="images\c-1c.gif" />
+    <Content Include="images\c-2a.gif" />
+    <Content Include="images\c-2c.gif" />
+    <Content Include="images\c-3a.gif" />
+    <Content Include="images\c-3b.gif" />
+    <Content Include="images\c-3c.gif" />
+    <Content Include="images\cal.gif" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\check.png" />
+    <Content Include="images\clock.gif" />
+    <Content Include="images\close_a.gif" />
+    <Content Include="images\close_d.gif" />
+    <Content Include="images\close_o.gif" />
+    <Content Include="images\Copy of b_chgpw.gif" />
+    <Content Include="images\Copy of b_chgpw2.gif" />
+    <Content Include="images\Copy of b_logout.gif" />
+    <Content Include="images\Copy of b_logout2.gif" />
+    <Content Include="images\copyright.gif" />
+    <Content Include="images\custlogo_lnf.jpg" />
+    <Content Include="images\custlogo_lnf2.jpg" />
+    <Content Include="images\custlogo_lnf3.jpg" />
+    <Content Include="images\deal.png" />
+    <Content Include="images\delete.jpg" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\DeleteRed.png" />
+    <Content Include="images\deselectall-icon.gif" />
+    <Content Include="images\down.gif" />
+    <Content Include="images\dtranfer1.png" />
+    <Content Include="images\dtranfer2.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\enter_licence_logo.gif" />
+    <Content Include="images\eye.gif" />
+    <Content Include="images\forward-lm2.gif" />
+    <Content Include="images\forward.png" />
+    <Content Include="images\frmcorner_1.png" />
+    <Content Include="images\frmcorner_2.png" />
+    <Content Include="images\frmcorner_3.png" />
+    <Content Include="images\frmcorner_4.png" />
+    <Content Include="images\frmln_bottom.png" />
+    <Content Include="images\frmln_left.png" />
+    <Content Include="images\frmln_right.png" />
+    <Content Include="images\frmln_top.png" />
+    <Content Include="images\gray1.gif" />
+    <Content Include="images\gray2.gif" />
+    <Content Include="images\gray3.gif" />
+    <Content Include="images\green1.gif" />
+    <Content Include="images\green2.gif" />
+    <Content Include="images\green3.gif" />
+    <Content Include="images\i-1.gif" />
+    <Content Include="images\i-3.gif" />
+    <Content Include="images\invalid_licence.gif" />
+    <Content Include="images\lefttab.gif" />
+    <Content Include="images\lightgrey.gif" />
+    <Content Include="images\loading1.gif" />
+    <Content Include="images\middlebg.jpg" />
+    <Content Include="images\middlebg1.jpg" />
+    <Content Include="images\middlebg3.jpg" />
+    <Content Include="images\middletab.gif" />
+    <Content Include="images\middletab2.gif" />
+    <Content Include="images\middletab2.jpg" />
+    <Content Include="images\next.gif" />
+    <Content Include="images\none.gif" />
+    <Content Include="images\pdf.png" />
+    <Content Include="images\prev.gif" />
+    <Content Include="images\read.gif" />
+    <Content Include="images\read1.gif" />
+    <Content Include="images\read2.gif" />
+    <Content Include="images\Refesh.png" />
+    <Content Include="images\refresh_icon.png" />
+    <Content Include="images\register.gif" />
+    <Content Include="images\righttab.gif" />
+    <Content Include="images\sd.png" />
+    <Content Include="images\selectall-icon.gif" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\spacer2.gif" />
+    <Content Include="images\star.gif" />
+    <Content Include="images\tab.gif" />
+    <Content Include="images\tab1.gif" />
+    <Content Include="images\tab1b.gif" />
+    <Content Include="images\tab2.gif" />
+    <Content Include="images\tab2b.gif" />
+    <Content Include="images\tab2_new.gif" />
+    <Content Include="images\tab3.gif" />
+    <Content Include="images\tab3b.gif" />
+    <Content Include="images\tick2.gif" />
+    <Content Include="images\trans.gif" />
+    <Content Include="images\unchecked.gif" />
+    <Content Include="images\unread.gif" />
+    <Content Include="images\unread2.gif" />
+    <Content Include="images\up.gif" />
+    <Content Include="markerImages\CoveredWithoutWS_.png" />
+    <Content Include="markerImages\CoveredWithoutWS_A.png" />
+    <Content Include="markerImages\CoveredWithoutWS_B.png" />
+    <Content Include="markerImages\CoveredWithoutWS_C.png" />
+    <Content Include="markerImages\CoveredWithoutWS_D.png" />
+    <Content Include="markerImages\CoveredWithoutWS_E.png" />
+    <Content Include="markerImages\CoveredWithoutWS_F.png" />
+    <Content Include="markerImages\CoveredWithoutWS_G.png" />
+    <Content Include="markerImages\CoveredWithoutWS_H.png" />
+    <Content Include="markerImages\CoveredWithoutWS_I.png" />
+    <Content Include="markerImages\CoveredWithoutWS_J.png" />
+    <Content Include="markerImages\CoveredWithoutWS_K.png" />
+    <Content Include="markerImages\CoveredWithoutWS_L.png" />
+    <Content Include="markerImages\CoveredWithoutWS_M.png" />
+    <Content Include="markerImages\CoveredWS_.png" />
+    <Content Include="markerImages\CoveredWS_A.png" />
+    <Content Include="markerImages\CoveredWS_B.png" />
+    <Content Include="markerImages\CoveredWS_C.png" />
+    <Content Include="markerImages\CoveredWS_D.png" />
+    <Content Include="markerImages\CoveredWS_E.png" />
+    <Content Include="markerImages\CoveredWS_F.png" />
+    <Content Include="markerImages\CoveredWS_G.png" />
+    <Content Include="markerImages\CoveredWS_H.png" />
+    <Content Include="markerImages\CoveredWS_I.png" />
+    <Content Include="markerImages\CoveredWS_J.png" />
+    <Content Include="markerImages\CoveredWS_K.png" />
+    <Content Include="markerImages\CoveredWS_L.png" />
+    <Content Include="markerImages\CoveredWS_M.png" />
+    <Content Include="markerImages\ND_.png" />
+    <Content Include="markerImages\ND_A.png" />
+    <Content Include="markerImages\ND_B.png" />
+    <Content Include="markerImages\ND_C.png" />
+    <Content Include="markerImages\ND_D.png" />
+    <Content Include="markerImages\ND_E.png" />
+    <Content Include="markerImages\ND_F.png" />
+    <Content Include="markerImages\ND_G.png" />
+    <Content Include="markerImages\ND_H.png" />
+    <Content Include="markerImages\ND_I.png" />
+    <Content Include="markerImages\ND_J.png" />
+    <Content Include="markerImages\ND_K.png" />
+    <Content Include="markerImages\ND_L.png" />
+    <Content Include="markerImages\ND_M.png" />
+    <Content Include="markerImages\SDN_A.png" />
+    <Content Include="markerImages\SDN_B.png" />
+    <Content Include="markerImages\SDN_C.png" />
+    <Content Include="markerImages\SDN_D.png" />
+    <Content Include="markerImages\SDN_E.png" />
+    <Content Include="markerImages\SDN_F.png" />
+    <Content Include="markerImages\SDN_G.png" />
+    <Content Include="markerImages\SDN_H.png" />
+    <Content Include="markerImages\SDN_I.png" />
+    <Content Include="markerImages\SDN_J.png" />
+    <Content Include="markerImages\SDN_K.png" />
+    <Content Include="markerImages\SDN_L.png" />
+    <Content Include="markerImages\SDN_M.png" />
+    <Content Include="markerImages\SD_.png" />
+    <Content Include="markerImages\SD_A.png" />
+    <Content Include="markerImages\SD_B.png" />
+    <Content Include="markerImages\SD_C.png" />
+    <Content Include="markerImages\SD_D.png" />
+    <Content Include="markerImages\SD_E.png" />
+    <Content Include="markerImages\SD_F.png" />
+    <Content Include="markerImages\SD_G.png" />
+    <Content Include="markerImages\SD_H.png" />
+    <Content Include="markerImages\SD_I.png" />
+    <Content Include="markerImages\SD_J.png" />
+    <Content Include="markerImages\SD_K.png" />
+    <Content Include="markerImages\SD_L.png" />
+    <Content Include="markerImages\SD_M.png" />
+    <Content Include="markerImages\Uncovered_.png" />
+    <Content Include="markerImages\Uncovered_A.png" />
+    <Content Include="markerImages\Uncovered_B.png" />
+    <Content Include="markerImages\Uncovered_C.png" />
+    <Content Include="markerImages\Uncovered_D.png" />
+    <Content Include="markerImages\Uncovered_E.png" />
+    <Content Include="markerImages\Uncovered_F.png" />
+    <Content Include="markerImages\Uncovered_G.png" />
+    <Content Include="markerImages\Uncovered_H.png" />
+    <Content Include="markerImages\Uncovered_I.png" />
+    <Content Include="markerImages\Uncovered_J.png" />
+    <Content Include="markerImages\Uncovered_K.png" />
+    <Content Include="markerImages\Uncovered_L.png" />
+    <Content Include="markerImages\Uncovered_M.png" />
+    <Content Include="P5s2.Master" />
+    <Content Include="libs\P5sVMap.css" />
+    <Content Include="MapAPI.js" />
+    <Content Include="P5sMaps.js" />
+    <Content Include="MAPPING_HIERARCHY.aspx" />
+    <Content Include="P5s.Master" />
+    <Content Include="Report\MasterDistributor.aspx" />
+    <Content Include="Report\MasterDistributorDemo1.aspx" />
+    <Content Include="Tool\CreateConsolidatedTable.aspx" />
+    <Content Include="Tool\CustomersMonthlyVisitReportAll.aspx" />
+    <Content Include="Tool\images\deselectall-icon.gif" />
+    <Content Include="Tool\images\selectall-icon.gif" />
+    <Content Include="Tool\InactiveCodeNotExistInFileMaster.aspx" />
+    <Content Include="Tool\ScriptSQL\dbo.S_PATH_UPLOAD.Table.sql" />
+    <Content Include="Tool\UpdateCustomer.aspx" />
+    <Content Include="Webservices\Synchronize.asmx" />
+    <Content Include="fsmdls\GoogleSheet\credentials.json" />
+    <Content Include="fsmdls\GoogleSheet\Upload\Plan_Messenger_Function.xlsx" />
+    <Content Include="fsmdls\GoogleSheet\Upload\VoucherPG_Phase3_Planning-200222.xlsx" />
+    <Content Include="fsmdls\StockCount\Templs\TemplMandatedAssortmentReport.xlsx" />
+    <None Include="images\Thumbs.db" />
+    <None Include="libs\bootstrap\bootstrap-toggle.min.js.map" />
+    <None Include="packages.config" />
+    <Content Include="Webservices\SynchronizeV2.asmx" />
+    <Content Include="Web.config" />
+    <Content Include="Report\Templs\SecondarySalesReport.xlsx" />
+    <Content Include="Report\Templs\TemplateImportSalesTarget.xlsx" />
+    <Content Include="Report\Templs\TH_TemplateImportSalesTarget_Primary.xlsx" />
+    <Content Include="Report\Templs\SecondarySalesReport_13213.xlsx" />
+    <Content Include="Tool\Templs\CustomersMonthlyVisitReport.xlsx" />
+    <Content Include="Tool\Templs\TemplateInactiveCode.xlsx" />
+    <Content Include="Tool\Templs\TemplateUpdateDSKH.xlsx" />
+    <Content Include="packages\Google.Apis.1.43.0\.signature.p7s" />
+    <Content Include="packages\Google.Apis.1.43.0\Google.Apis.1.43.0.nupkg" />
+    <Content Include="packages\Google.Apis.1.43.0\LICENSE" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\.signature.p7s" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\Google.Apis.Auth.1.43.0.nupkg" />
+    <Content Include="packages\Google.Apis.Auth.1.43.0\LICENSE" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\.signature.p7s" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\Google.Apis.Core.1.43.0.nupkg" />
+    <Content Include="packages\Google.Apis.Core.1.43.0\LICENSE" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\.signature.p7s" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\Google.Apis.Drive.v3.1.43.0.1863.nupkg" />
+    <Content Include="packages\Google.Apis.Drive.v3.1.43.0.1863\LICENSE" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\.signature.p7s" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\LICENSE.md" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\Newtonsoft.Json.12.0.3.nupkg" />
+    <Content Include="Report\Templs\TemplateProgramPrizeCustDetail.xlsx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exports\" />
+    <Folder Include="FileUpload\" />
+    <Folder Include="libs\.svn\prop-base\" />
+    <Folder Include="libs\.svn\props\" />
+    <Folder Include="libs\.svn\text-base\" />
+    <Folder Include="libs\.svn\tmp\prop-base\" />
+    <Folder Include="libs\.svn\tmp\props\" />
+    <Folder Include="libs\.svn\tmp\text-base\" />
+    <Folder Include="Tool\Backup\" />
+    <Folder Include="Tool\FileDailyUpload\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>54191</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

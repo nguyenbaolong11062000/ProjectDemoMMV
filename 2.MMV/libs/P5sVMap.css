@@ -1,0 +1,112 @@
+
+                    a {
+                    color:#15C;
+                    outline-style:none;
+                    cursor:pointer;
+                    }
+
+                    ol,ul {
+                    list-style-image:none;
+                    list-style-position:outside;
+                    list-style-type:none;
+                    }
+
+                    #listDirection {
+                    padding:12px 0 15px;
+                    } 	
+                    #searchtabdiv,.direction-item,#MyMapCoorPopup ol.inputinfo li {
+                    position:relative;
+                    }
+                    .instructionKeyword,.list-place-class:hover,.place-delete-class:hover {
+                    font-weight:700;
+                    }
+                    .direction-guide {
+                    width:100%;
+                    overflow:hidden;
+                    }
+        
+                    .stepsList {
+                    font-size:11px;
+                    line-height:18px;
+                    filter:none;
+                    margin:0;
+                    padding:0;
+                    }
+                    
+                    .StepList-hover {
+                    filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff,endColorStr=#f7f7f7);
+                    background:0 #f8f8f8;
+                    box-shadow:0 -8px 8px #f7f7f7 inset,0 0 0 #fff inset,0 0 0 #fff inset;
+                    }
+
+                    .stepsList li a {
+                    color:#333;
+                    position:absolute;
+                    left:10px;
+                    padding:0 0 0 8px;
+                    }
+
+                    .stepsList li {
+                    border-bottom:1px solid #d9d9d9;
+                    position:relative;
+                    cursor:pointer;
+                    padding:6px 16px 6px 45px;
+                    }
+
+                    .StepList-hover {
+                    filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#ffffff,endColorStr=#f7f7f7);
+                    background:0 #f8f8f8;
+                    box-shadow:0 -8px 8px #f7f7f7 inset,0 0 0 #fff inset,0 0 0 #fff inset;
+                    }
+
+                    .StepList-active,#MyMapCoorList .listpins li.MyMapCoorList-active {
+                    background:#ebbf56 0;
+                    filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#f7e163,endColorStr=#ebbf56);
+                    box-shadow:0 -20px 50px #ebbf56 inset,0 2px 50px #ebbf56 inset,0 50px 100px #f7e163 inset,0 2px 8px rgba(200,200,200,0.3);
+                    -moz-box-shadow:0 -20px 50px #ebbf56 inset,0 2px 50px #ebbf56 inset,0 50px 100px #f7e163 inset,0 2px 8px rgba(200,200,200,0.3);
+                    }
+
+
+                    .stepsList li a {
+                    color:#333;
+                    position:absolute;
+                    left:10px;
+                    padding:0 0 0 8px;
+                    }
+
+                    .instruction {
+                     display:inline-block;
+                     padding-right:45px;
+                     white-space: normal;
+                    }
+
+                    .distance {
+                    position:absolute;
+                    right:16px;
+                    padding:0 8px 0 0;
+                    }
+
+                    .summary {
+                    text-align:right;
+                    padding:8px 24px 8px 13px;
+                    }
+
+                    .summary b {
+                    margin-right:4px;
+                    }
+                    
+                    .btStyle
+                    {
+						cursor: pointer;
+						padding: 5px 8px;
+						font:bold 12px tahoma; text-decoration:none;
+						color: #636365; text-shadow:0 1px 0 #f1f1f1;
+						border: 1px solid #C0C2C4;
+						background: -moz-linear-gradient(center top , #FBFBFB, #F0EFEF) repeat scroll 0 0 #F2F2F2;
+						box-shadow: 1px 0 0 0 rgba(255, 255, 255, 0.3) inset;
+					}
+					.btStyle:hover{
+						background: -moz-linear-gradient(center top , #ffffff, #f4f4f4) repeat scroll 0 0 #F2F2F2;
+						border:1px #c0c2c4 solid;
+						box-shadow: 0px 0px 2px #c5c5c5;
+					}

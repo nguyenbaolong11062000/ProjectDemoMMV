@@ -1,0 +1,115 @@
+﻿input[type="submit"]{
+    text-decoration:none;
+    border-radius: 4px!important;
+    border-bottom-width:2px;
+    border-width: 1px;
+    border-color: #8aafce;
+    color: #6688a6!important;
+    background-color: #FFF!important;
+    text-shadow: none!important;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    user-select: none;
+    background-image: none!important;
+    transition: background-color .15s,border-color .15s,opacity .15s;
+    margin: 0;
+    position: inherit;
+    float: none!important;
+    font-family: inherit;
+    box-sizing: border-box;
+    align-items: flex-start;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    box-shadow: 0px 1px #8aafce;
+}
+
+.labeltxt{
+    background-color: #edf3f4 !important;
+    vertical-align: top;
+}
+
+
+.table{
+    display: table;
+    height: 79px; 
+    width: 862px; 
+    max-width: 100%;
+    margin-bottom: 10px;
+    border-radius: 0!important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #ffffff !important;
+}
+.table>tbody>tr>td{
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+
+*{
+    font-family: "Arial";
+}
+
+input[type=checkbox].ace+.lbl, input[type=radio].ace+.lbl{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 18px;
+    min-width: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.input-sm {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    padding: 4px 6px !important;
+    font-size: 12px;
+    box-shadow: none !important;
+    color: #858585;
+    background-color: #FFF;
+    border: 1px solid #D5D5D5;
+}
+
+.input-sm:hover {
+    border-color: #ff6a00;
+}
+
+.lblPerGrowth {
+    font-size: 50px;
+    color: #ff0000;
+}
+
+.lblPerYTD {
+    font-size: 30px;
+    color: #ff0000;
+}
+
+.lblMTD01 {
+    font-size: 40px;
+    color: #119102;
+    padding: 0;
+    text-align: right;
+    margin-right: 15%;
+    word-spacing: -4px;
+}
+
+.lblMTD02 {
+    font-size: 20px;
+    color: #119102;
+    padding: 0;
+    text-align: right;
+    word-spacing: -4px;
+}
